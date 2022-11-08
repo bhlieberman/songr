@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="album : ${albums}">
+    <li th:text="'Album name: ' + ${album.title}"></li>
+    <li th:text="'This album was made by: '+ ${album.artist}"></li>
+</ul>
+
+
+<form action="/" method="post">
+    <fieldset>
+        <legend>Add Album info</legend>
+        <label>Album title</label>
+        <input type="text" name="title"/>
+        <label>Artist</label>
+        <input type="text" name="artist">
+        <input type="submit" value="Add album">
+    </fieldset>
+</form>
+</body>
+</html>
